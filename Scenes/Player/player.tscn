@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkwyqn24mr2kk"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_el0um"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qs0vn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fror1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bj58w"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_el0um")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_qs0vn")
+mesh = SubResource("BoxMesh_fror1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_bj58w")
+
+[node name="LaserDector" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LaserDector"]
+shape = SubResource("ConcavePolygonShape3D_bj58w")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://by56a7kyuo34m"]
+
+[ext_resource type="Script" path="res://Scenes/platform/platform.gd" id="1_5w3bq"]
+[ext_resource type="PackedScene" uid="uid://ctgggaip2wo78" path="res://Scenes/laser/laser.tscn" id="2_g52tp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_owasg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ig2ij"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Platform" type="Node3D"]
+script = ExtResource("1_5w3bq")
+laser_scene = ExtResource("2_g52tp")
+log_y_ajustment = 0.58
+
+[node name="Platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(41.0079, 0, 0, 0, 1, 0, 0, 0, 41.0079, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_owasg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ig2ij")
+
+[node name="Marker3D" type="Marker3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="Marker3D3" type="Marker3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
