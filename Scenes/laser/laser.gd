@@ -27,4 +27,3 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	GlobalScript.on_player_dead()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

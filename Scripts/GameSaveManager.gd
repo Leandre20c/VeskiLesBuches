@@ -41,6 +41,9 @@ func reset_save_file():
 
 
 func update_player_score(player_name: String, player_score: int):
-	if player_name != "" && player_score != 0 && scores[player_name] < player_score:
+	if player_name && scores[player_name] >= player_score:
+		return
+	
+	if player_name != "" && player_score != 0:
 		scores[player_name] = player_score
 	

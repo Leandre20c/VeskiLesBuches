@@ -11,7 +11,7 @@ func increase_score(count : int):
 
 func on_player_dead():
 	GameSaveManager.update_player_score(player_name, score)
-	
 	GameSaveManager.save()
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://Scenes/menu/main_menu.tscn")

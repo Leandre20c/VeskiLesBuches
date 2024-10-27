@@ -19,6 +19,7 @@ func _on_button_pressed() -> void:
 func add_score_label(index: int, name: String, score: int):
 	var label = Label.new()
 	label.text = str(index) + ": " + str(name) + " - " + str(score)
+	label.add_theme_font_override("font", load("res://assets/Dosis-VariableFont_wght.ttf"))
 	score_list.add_child(label)
 	
 func update_score_list():

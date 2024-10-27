@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3vrc17tuk8lm"]
+[gd_scene load_steps=11 format=3 uid="uid://d3vrc17tuk8lm"]
 
 [ext_resource type="Script" path="res://Scenes/menu/main_menu.gd" id="1_iogdj"]
 [ext_resource type="Shader" path="res://Scenes/menu/background.gdshader" id="2_b43ba"]
 [ext_resource type="AudioStream" uid="uid://cfymjvu7w7mhy" path="res://assets/Cozy_Cabin_Chronicles.mp3" id="2_iygi3"]
+[ext_resource type="FontFile" uid="uid://7orvtk1ej1rg" path="res://assets/Dosis-VariableFont_wght.ttf" id="4_2qyma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a3u7n"]
 shader = ExtResource("2_b43ba")
@@ -17,39 +18,20 @@ shader_parameter/blur = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiwlp"]
 bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2y0i"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ocsd"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12nhk"]
 bg_color = Color(0.180392, 0.458824, 0.447059, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7e2x"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf6kd"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c073j"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvshv"]
-bg_color = Color(0.239216, 0.572549, 0.560784, 0.87451)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqmxr"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exvjo"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 0.45098)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2lgj"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmm6e"]
-bg_color = Color(0.180392, 0.458824, 0.447059, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qifut"]
+bg_color = Color(0.191227, 0.480785, 0.468528, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxib"]
 bg_color = Color(0.180392, 0.458824, 0.447059, 1)
@@ -100,7 +82,8 @@ layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0.182281, 0.456904, 0.447362, 1)
 theme_override_constants/outline_size = 35
-theme_override_font_sizes/font_size = 33
+theme_override_fonts/font = ExtResource("4_2qyma")
+theme_override_font_sizes/font_size = 63
 text = "veski les buches"
 horizontal_alignment = 1
 uppercase = true
@@ -114,9 +97,12 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_2lug8")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(7.2, 62.07)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_2qyma")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aiwlp")
 placeholder_text = "Pseudo"
+alignment = 1
 max_length = 16
+clear_button_enabled = true
 
 [node name="CheckBox" type="CheckBox" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -133,17 +119,18 @@ custom_minimum_size = Vector2(200, 67)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_styles/focus = SubResource("StyleBoxFlat_b2y0i")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_4ocsd")
+theme_override_fonts/font = ExtResource("4_2qyma")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_aiwlp")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_12nhk")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_h7e2x")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jf6kd")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_c073j")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qvshv")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_pqmxr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_exvjo")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_y2lgj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_jmm6e")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qifut")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_aiwlp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aiwlp")
 text = "JOUER"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
@@ -160,8 +147,19 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="ScoreList" type="VBoxContainer" parent="VBoxContainer/Panel/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScoreList" type="VBoxContainer" parent="VBoxContainer/Panel/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
