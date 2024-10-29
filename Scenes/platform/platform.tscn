@@ -10,8 +10,7 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [node name="Platform" type="Node3D"]
 script = ExtResource("1_5w3bq")
-laser_scene = ExtResource("2_g52tp")
-log_y_ajustment = 0.58
+log_scene = ExtResource("2_g52tp")
 
 [node name="Platform" type="MeshInstance3D" parent="."]
 transform = Transform3D(41.0079, 0, 0, 0, 1, 0, 0, 0, 41.0079, 0, 0, 0)
